@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+.././civan/bytearray.h
+memory
+-
+string
+-
+stdint.h
+-
+vector
+-
+sys/uio.h
+-
+endian.h
+.././civan/endian.h
+
+.././civan/endian.h
+byteswap.h
+-
+stdint.h
+-
+
+/home/dell/jqchen/cpp_project/civan/tests/test_bytearray.cc
+civan/bytearray.h
+/home/dell/jqchen/cpp_project/civan/tests/civan/bytearray.h
+civan/civan.h
+/home/dell/jqchen/cpp_project/civan/tests/civan/civan.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations   CMakeFiles/test_hook.dir/tests/test_hook.cc.o  -o ../bin/test_hook  -L/apps/civan/lib -rdynamic ../lib/libcivan.so -lpthread -lyaml-cpp -ldl -Wl,-rpath,/apps/civan/lib:/home/dell/jqchen/cpp_project/civan/lib 

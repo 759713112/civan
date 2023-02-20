@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+3af9c96df0c926e9b6b6c1f0966a2b29 ../civan/http/http11_parser.rl.cc
+13afa259be2b4d38655955522da794a7 ../civan/http/httpclient_parser.rl.cc
+6863e97e996ef7afac4da5f69cd6c481 ../civan/uri.rl.cc

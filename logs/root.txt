@@ -1,0 +1,48 @@
+2023-01-19 12:56:02	name=logs description=logs config typename=St3setIN5civan9LogDefineESt4lessIS1_ESaIS1_EE value=- "name: root\nlevel: INFO\nformatter: \"%d%T%m%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/root.txt\\nlevel: INFO\\nformatter: \\\"\\\"\""
+- "name: system\nlevel: INFO\nformatter: \"%d%T%m%F%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/system.txt\\nlevel: INFO\\nformatter: T%m%F%F%n\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+2023-01-19 12:56:02	name=system.int_vec description=system int_vec typename=St6vectorIiSaIiEE value=- 4
+- 6
+2023-01-19 12:56:02	name=system.person description=system int_vec typename=N5civan6PersonE value=name: 2222
+age: 100
+2023-01-19 12:56:02	name=system.person_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN5civan6PersonESt4lessIS5_ESaISt4pairIKS5_S7_EEE value=ddd:
+  name: 2222
+  age: 100
+2023-01-19 12:56:02	name=system.port description=system port typename=i value=1234
+2023-01-19 12:56:02	name=system.str_int_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiSt4lessIS5_ESaISt4pairIKS5_iEEE value=b: 2
+k: 1
+2023-01-19 12:56:40	name=logs description=logs config typename=St3setIN5civan9LogDefineESt4lessIS1_ESaIS1_EE value=- "name: root\nlevel: INFO\nformatter: \"%d%T%m%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/root.txt\\nlevel: INFO\\nformatter: \\\"\\\"\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+- "name: system\nlevel: INFO\nformatter: \"%d%T%m%F%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/system.txt\\nlevel: INFO\\nformatter: T%m%F%F%n\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+2023-01-19 12:56:40	name=system.int_vec description=system int_vec typename=St6vectorIiSaIiEE value=- 4
+- 6
+2023-01-19 12:56:40	name=system.person description=system int_vec typename=N5civan6PersonE value=name: 2222
+age: 100
+2023-01-19 12:56:40	name=system.person_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN5civan6PersonESt4lessIS5_ESaISt4pairIKS5_S7_EEE value=ddd:
+  name: 2222
+  age: 100
+2023-01-19 12:56:40	name=system.port description=system port typename=i value=1234
+2023-01-19 12:56:40	name=system.str_int_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiSt4lessIS5_ESaISt4pairIKS5_iEEE value=b: 2
+k: 1
+2023-01-19 14:14:12	name=logs description=logs config typename=St3setIN5civan9LogDefineESt4lessIS1_ESaIS1_EE value=- "name: root\nlevel: INFO\nformatter: \"%d%T%m%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/root.txt\\nlevel: INFO\\nformatter: \\\"\\\"\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+- "name: system\nlevel: INFO\nformatter: \"%d%T%m%F%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/system.txt\\nlevel: INFO\\nformatter: T%m%F%F%n\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+2023-01-19 14:14:12	name=system.int_vec description=system int_vec typename=St6vectorIiSaIiEE value=- 4
+- 6
+2023-01-19 14:14:12	name=system.person description=system int_vec typename=N5civan6PersonE value=name: 2222
+age: 100
+2023-01-19 14:14:12	name=system.person_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN5civan6PersonESt4lessIS5_ESaISt4pairIKS5_S7_EEE value=ddd:
+  name: 2222
+  age: 100
+2023-01-19 14:14:12	name=system.port description=system port typename=i value=1234
+2023-01-19 14:14:12	name=system.str_int_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiSt4lessIS5_ESaISt4pairIKS5_iEEE value=b: 2
+k: 1
+2023-01-19 14:22:47	name=logs description=logs config typename=St3setIN5civan9LogDefineESt4lessIS1_ESaIS1_EE value=- "name: root\nlevel: INFO\nformatter: \"%d%T%m%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/root.txt\\nlevel: INFO\\nformatter: \\\"\\\"\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+- "name: system\nlevel: INFO\nformatter: \"%d%T%m%F%n\"\nappenders:\n  - \"type: FileLogAppender\\nfile: /home/dell/jqchen/cpp_project/civan/logs/system.txt\\nlevel: INFO\\nformatter: T%m%F%F%n\"\n  - \"type: StdoutLogAppender\\nlevel: INFO\\nformatter: \\\"\\\"\""
+2023-01-19 14:22:47	name=system.int_vec description=system int_vec typename=St6vectorIiSaIiEE value=- 4
+- 6
+2023-01-19 14:22:47	name=system.person description=system int_vec typename=N5civan6PersonE value=name: 2222
+age: 100
+2023-01-19 14:22:47	name=system.person_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN5civan6PersonESt4lessIS5_ESaISt4pairIKS5_S7_EEE value=ddd:
+  name: 2222
+  age: 100
+2023-01-19 14:22:47	name=system.port description=system port typename=i value=1234
+2023-01-19 14:22:47	name=system.str_int_map description=system int_vec typename=St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiSt4lessIS5_ESaISt4pairIKS5_iEEE value=b: 2
+k: 1
