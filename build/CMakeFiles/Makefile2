@@ -100,13 +100,87 @@ clean: CMakeFiles/civan.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/echo_server.dir
+
+# All Build rule for target.
+CMakeFiles/echo_server.dir/all: CMakeFiles/civan.dir/all
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/depend
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=29,30 "Built target echo_server"
+.PHONY : CMakeFiles/echo_server.dir/all
+
+# Include target in all.
+all: CMakeFiles/echo_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/echo_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 30
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 0
+.PHONY : CMakeFiles/echo_server.dir/rule
+
+# Convenience name for target.
+echo_server: CMakeFiles/echo_server.dir/rule
+
+.PHONY : echo_server
+
+# clean rule for target.
+CMakeFiles/echo_server.dir/clean:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/clean
+.PHONY : CMakeFiles/echo_server.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/echo_server.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/my_server.dir
+
+# All Build rule for target.
+CMakeFiles/my_server.dir/all: CMakeFiles/civan.dir/all
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/depend
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=31,32 "Built target my_server"
+.PHONY : CMakeFiles/my_server.dir/all
+
+# Include target in all.
+all: CMakeFiles/my_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/my_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 30
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/my_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 0
+.PHONY : CMakeFiles/my_server.dir/rule
+
+# Convenience name for target.
+my_server: CMakeFiles/my_server.dir/rule
+
+.PHONY : my_server
+
+# clean rule for target.
+CMakeFiles/my_server.dir/clean:
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/clean
+.PHONY : CMakeFiles/my_server.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/my_server.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test2.dir
 
 # All Build rule for target.
 CMakeFiles/test2.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test2.dir/build.make CMakeFiles/test2.dir/depend
 	$(MAKE) -f CMakeFiles/test2.dir/build.make CMakeFiles/test2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=29,30 "Built target test2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=33,34 "Built target test2"
 .PHONY : CMakeFiles/test2.dir/all
 
 # Include target in all.
@@ -143,7 +217,7 @@ clean: CMakeFiles/test2.dir/clean
 CMakeFiles/test_address.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/depend
 	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=31,32 "Built target test_address"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=35,36 "Built target test_address"
 .PHONY : CMakeFiles/test_address.dir/all
 
 # Include target in all.
@@ -180,7 +254,7 @@ clean: CMakeFiles/test_address.dir/clean
 CMakeFiles/test_bytearray.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/depend
 	$(MAKE) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=33,34 "Built target test_bytearray"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=37,38 "Built target test_bytearray"
 .PHONY : CMakeFiles/test_bytearray.dir/all
 
 # Include target in all.
@@ -217,7 +291,7 @@ clean: CMakeFiles/test_bytearray.dir/clean
 CMakeFiles/test_config.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=35,36 "Built target test_config"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=39,40 "Built target test_config"
 .PHONY : CMakeFiles/test_config.dir/all
 
 # Include target in all.
@@ -254,7 +328,7 @@ clean: CMakeFiles/test_config.dir/clean
 CMakeFiles/test_epoll_wait.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_epoll_wait.dir/build.make CMakeFiles/test_epoll_wait.dir/depend
 	$(MAKE) -f CMakeFiles/test_epoll_wait.dir/build.make CMakeFiles/test_epoll_wait.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=37,38 "Built target test_epoll_wait"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=41,42 "Built target test_epoll_wait"
 .PHONY : CMakeFiles/test_epoll_wait.dir/all
 
 # Include target in all.
@@ -291,7 +365,7 @@ clean: CMakeFiles/test_epoll_wait.dir/clean
 CMakeFiles/test_fiber.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/depend
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=39,40 "Built target test_fiber"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=43,44 "Built target test_fiber"
 .PHONY : CMakeFiles/test_fiber.dir/all
 
 # Include target in all.
@@ -328,7 +402,7 @@ clean: CMakeFiles/test_fiber.dir/clean
 CMakeFiles/test_hook.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/depend
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=41,42 "Built target test_hook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=45,46 "Built target test_hook"
 .PHONY : CMakeFiles/test_hook.dir/all
 
 # Include target in all.
@@ -359,13 +433,50 @@ clean: CMakeFiles/test_hook.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_http_parser.dir
+
+# All Build rule for target.
+CMakeFiles/test_http_parser.dir/all: CMakeFiles/civan.dir/all
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/depend
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=47,48 "Built target test_http_parser"
+.PHONY : CMakeFiles/test_http_parser.dir/all
+
+# Include target in all.
+all: CMakeFiles/test_http_parser.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_http_parser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 30
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_http_parser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dell/jqchen/cpp_project/civan/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_http_parser.dir/rule
+
+# Convenience name for target.
+test_http_parser: CMakeFiles/test_http_parser.dir/rule
+
+.PHONY : test_http_parser
+
+# clean rule for target.
+CMakeFiles/test_http_parser.dir/clean:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/clean
+.PHONY : CMakeFiles/test_http_parser.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test_http_parser.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_iomanager.dir
 
 # All Build rule for target.
 CMakeFiles/test_iomanager.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/depend
 	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=43,44 "Built target test_iomanager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=49,50 "Built target test_iomanager"
 .PHONY : CMakeFiles/test_iomanager.dir/all
 
 # Include target in all.
@@ -402,7 +513,7 @@ clean: CMakeFiles/test_iomanager.dir/clean
 CMakeFiles/test_scheduler.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/depend
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=45,46 "Built target test_scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=51,52 "Built target test_scheduler"
 .PHONY : CMakeFiles/test_scheduler.dir/all
 
 # Include target in all.
@@ -439,7 +550,7 @@ clean: CMakeFiles/test_scheduler.dir/clean
 CMakeFiles/test_socket.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/depend
 	$(MAKE) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=47,48 "Built target test_socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=53,54 "Built target test_socket"
 .PHONY : CMakeFiles/test_socket.dir/all
 
 # Include target in all.
@@ -476,7 +587,7 @@ clean: CMakeFiles/test_socket.dir/clean
 CMakeFiles/test_thread.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=49,50 "Built target test_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=55,56 "Built target test_thread"
 .PHONY : CMakeFiles/test_thread.dir/all
 
 # Include target in all.
@@ -513,7 +624,7 @@ clean: CMakeFiles/test_thread.dir/clean
 CMakeFiles/test_util.dir/all: CMakeFiles/civan.dir/all
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/depend
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=51,52 "Built target test_util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=57,58 "Built target test_util"
 .PHONY : CMakeFiles/test_util.dir/all
 
 # Include target in all.

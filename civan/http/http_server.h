@@ -12,7 +12,7 @@ namespace http {
 class HttpServer : public TcpServer {
 public:
     HttpServer(bool keepalive = false
-                ,civan::IOManager* worker = civan::IOManager::GetThis()
+                //,civan::IOManager* worker = civan::IOManager::GetThis()
                 //,civan::IOManager* io_worker = civan::IOManager::GetThis()
                 , civan::IOManager* accept_worker = civan::IOManager::GetThis());
 

@@ -9,9 +9,8 @@ static civan::ConfigVar<uint64_t>::ptr g_tcp_server_read_timeout =
 
 static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
 
-TcpServer::TcpServer(civan::IOManager* worker, civan::IOManager* accept_worker)
-    :m_worker(worker)
-    ,m_acceptWorker(accept_worker)
+TcpServer::TcpServer(civan::IOManager* accept_worker)
+    :m_acceptWorker(accept_worker)
     ,m_recvTimeout(g_tcp_server_read_timeout->getValue())
     ,m_name("civan/1.0.0")
     ,m_isStop(true) {
@@ -63,13 +62,29 @@ bool TcpServer::bind(const std::vector<Address::ptr>& addrs
     return true;
 }
 
+void TcpServer::addWorker(IOManager::ptr worker) {
+    m_workers.push_back(worker);
+}
+
+
 void TcpServer::startAccept(Socket::ptr sock) {
     while (!m_isStop) {
         Socket::ptr client = sock->accept();
         if (client) {
             client->setRecvTimeout(m_recvTimeout);
-            m_worker->schedule(std::bind(&TcpServer::handleClient, 
+            if (m_workers.size() == 0) {
+                m_acceptWorker->schedule(std::bind(&TcpServer::handleClient, 
                                 shared_from_this(), client));
+            } else {
+                int id = client->getSocket() % m_workers.size();
+
+                // CIVAN_LOG_FATAL(g_logger) << "worker id:" << id 
+                //                 << " workers size:" << m_workers.size()
+                //                 << " sock id:" << sock->getSocket();
+                m_workers[id]->schedule(std::bind(&TcpServer::handleClient, 
+                                shared_from_this(), client));
+            }
+            
         } else {
             CIVAN_LOG_ERROR(g_logger) << "accept errno" << errno
                 << "errstr=" << strerror(errno);

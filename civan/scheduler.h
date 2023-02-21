@@ -3,11 +3,11 @@
 
 #include "fiber.h"
 #include "thread.h"
+#include "mutex.h"
 #include <vector>
 #include <list>
 #include "log.h"
 namespace civan {
-static civan::Logger::ptr g_logger2 = CIVAN_LOG_NAME("system");
 class  Scheduler{
 public:
     typedef std::shared_ptr<Scheduler> ptr;

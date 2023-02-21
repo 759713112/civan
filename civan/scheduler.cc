@@ -55,7 +55,7 @@ void Scheduler::start() {
     if (!m_stopping) {
         return;
     }
-
+    
     m_stopping = false;
 
     CIVAN_ASSERT(m_threads.empty());

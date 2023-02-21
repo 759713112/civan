@@ -64,7 +64,7 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)
     rt = epoll_ctl(m_epfd, EPOLL_CTL_ADD, m_tickleFds[0], &event);
     CIVAN_ASSERT(rt == 0);
 
-    contextResize(32);
+    contextResize(64);
     start();
 }
 
@@ -129,7 +129,6 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
         return -1;    
     }
     m_pendingEventCount++;
-    CIVAN_LOG_ERROR(g_logger)  << "m_pendingEventCount++;";
     fd_ctx->events = (Event)(fd_ctx->events | event);
     FdContext::EventContext& event_ctx = fd_ctx->getContext(event);
     CIVAN_ASSERT(!event_ctx.scheduler 
@@ -257,11 +256,11 @@ IOManager* IOManager::GetThis() {
 }
 
 void IOManager::tickle() {
-    // if (!hasIdleThreads()) {
-    //     return;
-    // }
-    // int rt = write(m_tickleFds[1], "T", 1);
-    // CIVAN_ASSERT(rt == 1);
+    if (!hasIdleThreads()) {
+        return;
+    }
+    int rt = write(m_tickleFds[1], "T", 1);
+    CIVAN_ASSERT(rt == 1);
 }
 
 bool IOManager::stopping() {
@@ -306,7 +305,7 @@ void IOManager::idle() {
                 break;
             }
         } while(true);
-        //CIVAN_LOG_INFO(g_logger) << Thread::GetName() << " epoll wait wake!!!";
+        //CIVAN_LOG_FATAL(g_logger) << Thread::GetName() << " epoll wait wake!!!";
         std::vector<std::function<void()>> cbs;
         listExpiredCb(cbs);
         if (!cbs.empty()) {

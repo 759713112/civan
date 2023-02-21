@@ -99,6 +99,8 @@ fiber.h
 .././civan/fiber.h
 thread.h
 .././civan/thread.h
+mutex.h
+.././civan/mutex.h
 vector
 -
 list

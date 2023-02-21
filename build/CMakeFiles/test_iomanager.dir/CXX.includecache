@@ -185,6 +185,8 @@ fiber.h
 /home/dell/jqchen/cpp_project/civan/civan/fiber.h
 thread.h
 /home/dell/jqchen/cpp_project/civan/civan/thread.h
+mutex.h
+/home/dell/jqchen/cpp_project/civan/civan/mutex.h
 vector
 -
 list

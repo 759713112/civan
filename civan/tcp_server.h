@@ -13,8 +13,7 @@ class TcpServer : public std::enable_shared_from_this<TcpServer>
                     , Noncopyable{
 public:
     typedef std::shared_ptr<TcpServer> ptr;
-    TcpServer(civan::IOManager* worker = civan::IOManager::GetThis()
-                , civan::IOManager* accept_worker = civan::IOManager::GetThis());
+    TcpServer(IOManager* accept_worker = IOManager::GetThis());
     virtual ~TcpServer();
     virtual bool bind(civan::Address::ptr addr);
     //bind and listen
@@ -28,12 +27,14 @@ public:
     void setName(const std::string& v) { m_name = v; }
     bool isStop() const { return m_isStop; }
 
+    void addWorker(IOManager::ptr worker);
 protected:
     virtual void handleClient(Socket::ptr client);
     virtual void startAccept(Socket::ptr sock);
 private:
     std::vector<Socket::ptr> m_socks;
-    IOManager* m_worker;
+
+    std::vector<IOManager::ptr> m_workers;
     IOManager* m_acceptWorker;
     uint64_t m_recvTimeout;
     std::string m_name;

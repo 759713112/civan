@@ -127,6 +127,32 @@ civan/fast:
 .PHONY : civan/fast
 
 #=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
+# Target rules for targets named my_server
+
+# Build rule for target.
+my_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_server
+.PHONY : my_server
+
+# fast build rule for target.
+my_server/fast:
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/build
+.PHONY : my_server/fast
+
+#=============================================================================
 # Target rules for targets named test2
 
 # Build rule for target.
@@ -216,6 +242,19 @@ test_hook: cmake_check_build_system
 test_hook/fast:
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
 .PHONY : test_hook/fast
+
+#=============================================================================
+# Target rules for targets named test_http_parser
+
+# Build rule for target.
+test_http_parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_parser
+.PHONY : test_http_parser
+
+# fast build rule for target.
+test_http_parser/fast:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+.PHONY : test_http_parser/fast
 
 #=============================================================================
 # Target rules for targets named test_iomanager
@@ -930,6 +969,60 @@ civan/util.cc.s:
 	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/util.cc.s
 .PHONY : civan/util.cc.s
 
+examples/echo_server.o: examples/echo_server.cc.o
+
+.PHONY : examples/echo_server.o
+
+# target to build an object file
+examples/echo_server.cc.o:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.o
+.PHONY : examples/echo_server.cc.o
+
+examples/echo_server.i: examples/echo_server.cc.i
+
+.PHONY : examples/echo_server.i
+
+# target to preprocess a source file
+examples/echo_server.cc.i:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.i
+.PHONY : examples/echo_server.cc.i
+
+examples/echo_server.s: examples/echo_server.cc.s
+
+.PHONY : examples/echo_server.s
+
+# target to generate assembly for a file
+examples/echo_server.cc.s:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.s
+.PHONY : examples/echo_server.cc.s
+
+examples/my_server.o: examples/my_server.cc.o
+
+.PHONY : examples/my_server.o
+
+# target to build an object file
+examples/my_server.cc.o:
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/examples/my_server.cc.o
+.PHONY : examples/my_server.cc.o
+
+examples/my_server.i: examples/my_server.cc.i
+
+.PHONY : examples/my_server.i
+
+# target to preprocess a source file
+examples/my_server.cc.i:
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/examples/my_server.cc.i
+.PHONY : examples/my_server.cc.i
+
+examples/my_server.s: examples/my_server.cc.s
+
+.PHONY : examples/my_server.s
+
+# target to generate assembly for a file
+examples/my_server.cc.s:
+	$(MAKE) -f CMakeFiles/my_server.dir/build.make CMakeFiles/my_server.dir/examples/my_server.cc.s
+.PHONY : examples/my_server.cc.s
+
 tests/test.o: tests/test.cc.o
 
 .PHONY : tests/test.o
@@ -1119,6 +1212,33 @@ tests/test_hook.cc.s:
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
 .PHONY : tests/test_hook.cc.s
 
+tests/test_http_parser.o: tests/test_http_parser.cc.o
+
+.PHONY : tests/test_http_parser.o
+
+# target to build an object file
+tests/test_http_parser.cc.o:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.o
+.PHONY : tests/test_http_parser.cc.o
+
+tests/test_http_parser.i: tests/test_http_parser.cc.i
+
+.PHONY : tests/test_http_parser.i
+
+# target to preprocess a source file
+tests/test_http_parser.cc.i:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.i
+.PHONY : tests/test_http_parser.cc.i
+
+tests/test_http_parser.s: tests/test_http_parser.cc.s
+
+.PHONY : tests/test_http_parser.s
+
+# target to generate assembly for a file
+tests/test_http_parser.cc.s:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.s
+.PHONY : tests/test_http_parser.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -1262,6 +1382,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... echo_server"
+	@echo "... test_http_parser"
 	@echo "... test_iomanager"
 	@echo "... test_config"
 	@echo "... test_bytearray"
@@ -1272,6 +1394,7 @@ help:
 	@echo "... test_scheduler"
 	@echo "... test_util"
 	@echo "... test_epoll_wait"
+	@echo "... my_server"
 	@echo "... civan"
 	@echo "... test_hook"
 	@echo "... test_socket"
@@ -1347,6 +1470,12 @@ help:
 	@echo "... civan/util.o"
 	@echo "... civan/util.i"
 	@echo "... civan/util.s"
+	@echo "... examples/echo_server.o"
+	@echo "... examples/echo_server.i"
+	@echo "... examples/echo_server.s"
+	@echo "... examples/my_server.o"
+	@echo "... examples/my_server.i"
+	@echo "... examples/my_server.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
@@ -1368,6 +1497,9 @@ help:
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"
+	@echo "... tests/test_http_parser.o"
+	@echo "... tests/test_http_parser.i"
+	@echo "... tests/test_http_parser.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"

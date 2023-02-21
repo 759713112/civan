@@ -9,10 +9,10 @@ namespace http {
 static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
 
 HttpServer::HttpServer(bool keepalive
-               ,civan::IOManager* worker
+               //,civan::IOManager* worker
                //,civan::IOManager* io_worker
                ,civan::IOManager* accept_worker)
-    :TcpServer(worker, accept_worker)
+    :TcpServer(accept_worker)
     ,m_isKeepalive(keepalive) {
     m_dispatch.reset(new ServletDispatch);
 
@@ -37,15 +37,15 @@ void HttpServer::handleClient(Socket::ptr client) {
                 << " cliet:" << *client << " keep_alive=" << m_isKeepalive;
             break;
         }
-
+        
         HttpResponse::ptr rsp(new HttpResponse(req->getVersion()
-                            ,req->isClose() || !m_isKeepalive));
+                            , req->isClose() || !m_isKeepalive));
         // rsp->setBody("hello civan");
         // session->sendResponse(rsp);
         //rsp->setHeader("Server", getName());
         m_dispatch->handle(req, rsp, session);
         session->sendResponse(rsp);
-
+        
         if(!m_isKeepalive || req->isClose()) {
             break;
         }

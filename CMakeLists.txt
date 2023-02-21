@@ -12,7 +12,7 @@ include (cmake/utils.cmake)
 
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations")
+set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O2 -fPIC  -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations")
 
 
 include_directories(.)
@@ -136,15 +136,20 @@ add_dependencies(test_bytearray civan)
 force_redefine_file_macro_for_sources(test_bytearray)  #__FILE__
 target_link_libraries(test_bytearray ${LIB_LIB})
 
-# add_executable(test_http_parser "tests/test_http_parser.cc")
-# add_dependencies(test_http_parser civan)
-# force_redefine_file_macro_for_sources(test_http_parser)  #__FILE__
-# target_link_libraries(test_http_parser ${LIB_LIB})
+add_executable(test_http_parser "tests/test_http_parser.cc")
+add_dependencies(test_http_parser civan)
+force_redefine_file_macro_for_sources(test_http_parser)  #__FILE__
+target_link_libraries(test_http_parser ${LIB_LIB})
 
-# add_executable(echo_server "examples/echo_server.cc")
-# add_dependencies(echo_server civan)
-# force_redefine_file_macro_for_sources(echo_server)  #__FILE__
-# target_link_libraries(echo_server ${LIB_LIB})
+add_executable(echo_server "examples/echo_server.cc")
+add_dependencies(echo_server civan)
+force_redefine_file_macro_for_sources(echo_server)  #__FILE__
+target_link_libraries(echo_server ${LIB_LIB})
+
+add_executable(my_server "examples/my_server.cc")
+add_dependencies(my_server civan)
+force_redefine_file_macro_for_sources(my_server)  #__FILE__
+target_link_libraries(my_server ${LIB_LIB})
 
 
 # add_executable(test_http_server "tests/test_http_server.cc")

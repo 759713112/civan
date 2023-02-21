@@ -60,7 +60,7 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
         makecontext(&m_ctx, &Fiber::CallerMainFunc, 0);
     }
      
-    CIVAN_LOG_DEBUG(g_logger) << "construct fiber id = " << m_id;
+    //CIVAN_LOG_DEBUG(g_logger) << "construct fiber id = " << m_id;
 }
 
 Fiber::~Fiber() {

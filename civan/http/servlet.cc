@@ -107,14 +107,40 @@ Servlet::ptr ServletDispatch::getMatchedServlet(const std::string& uri) {
 
 NotFoundServlet::NotFoundServlet()
     : Servlet("NotFoundServlet"){
-    m_content = "<html><head><title>404 Not Found"
-        "</title></head><body><center><h1>404 Not Found</h1></center>"
-        "<hr><center>" "</center></body></html>"; //name +
+    // m_content = "<html><head><title>404 Not Found"
+    //     "</title></head><body><center><h1>404 Not Found</h1></center>"
+    //     "<hr><center>" "</center></body></html>"; //name +
+m_content = 
+"<!DOCTYPE html>"
+"<html>"
+"<head>"
+"<title>Welcome to nginx!</title>"
+"<style>"
+    "body {"
+        "width: 35em;"
+        "margin: 0 auto;"
+        "font-family: Tahoma, Verdddddddddddana, Arial, sans-serif;"
+"    }"
+"</style>"
+"</head>"
+"<body>"
+"<h1>Welcomeddddddddddddddddddddddddddddddddddddddddd to nginx!</h1>"
+"<p>If you see this page, the nginxdddddddddddd web server is successfully installed and"
+"working. Further configuration is reqfdufffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffired.</p>"
+
+"<p>For online documentation and support please refer to"
+"<a href="
+"Commercial support is available at"
+"<a href="
+
+"<p><em>Thank you for using nginx.</em></p>"
+"</body>"
+"</html>";
 }
 int32_t NotFoundServlet::handle(civan::http::HttpRequest::ptr request
                 , civan::http::HttpResponse::ptr response
                 , civan::http::HttpSession::ptr session) {
-    response->setStatus(civan::http::HttpStatus::NOT_FOUND);
+    response->setStatus(civan::http::HttpStatus::OK);
     response->setHeader("Server", "civan/1.0.0");
     response->setHeader("Content-Type", "text/html");
     response->setBody(m_content);
