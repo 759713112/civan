@@ -579,9 +579,81 @@ CMakeFiles/civan.dir/civan/socket_stream.cc.o.provides: CMakeFiles/civan.dir/civ
 CMakeFiles/civan.dir/civan/socket_stream.cc.o.provides.build: CMakeFiles/civan.dir/civan/socket_stream.cc.o
 
 
+CMakeFiles/civan.dir/civan/store/session.cc.o: CMakeFiles/civan.dir/flags.make
+CMakeFiles/civan.dir/civan/store/session.cc.o: ../civan/store/session.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/civan.dir/civan/store/session.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/store/session.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/store/session.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/store/session.cc
+
+CMakeFiles/civan.dir/civan/store/session.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/civan.dir/civan/store/session.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/session.cc\" $(CXX_FLAGS) -E /home/dell/jqchen/cpp_project/civan/civan/store/session.cc > CMakeFiles/civan.dir/civan/store/session.cc.i
+
+CMakeFiles/civan.dir/civan/store/session.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/civan.dir/civan/store/session.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/session.cc\" $(CXX_FLAGS) -S /home/dell/jqchen/cpp_project/civan/civan/store/session.cc -o CMakeFiles/civan.dir/civan/store/session.cc.s
+
+CMakeFiles/civan.dir/civan/store/session.cc.o.requires:
+
+.PHONY : CMakeFiles/civan.dir/civan/store/session.cc.o.requires
+
+CMakeFiles/civan.dir/civan/store/session.cc.o.provides: CMakeFiles/civan.dir/civan/store/session.cc.o.requires
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/session.cc.o.provides.build
+.PHONY : CMakeFiles/civan.dir/civan/store/session.cc.o.provides
+
+CMakeFiles/civan.dir/civan/store/session.cc.o.provides.build: CMakeFiles/civan.dir/civan/store/session.cc.o
+
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: CMakeFiles/civan.dir/flags.make
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: ../civan/store/message_handler.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/civan.dir/civan/store/message_handler.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/store/message_handler.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/store/message_handler.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/store/message_handler.cc
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/civan.dir/civan/store/message_handler.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/message_handler.cc\" $(CXX_FLAGS) -E /home/dell/jqchen/cpp_project/civan/civan/store/message_handler.cc > CMakeFiles/civan.dir/civan/store/message_handler.cc.i
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/civan.dir/civan/store/message_handler.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/message_handler.cc\" $(CXX_FLAGS) -S /home/dell/jqchen/cpp_project/civan/civan/store/message_handler.cc -o CMakeFiles/civan.dir/civan/store/message_handler.cc.s
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o.requires:
+
+.PHONY : CMakeFiles/civan.dir/civan/store/message_handler.cc.o.requires
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o.provides: CMakeFiles/civan.dir/civan/store/message_handler.cc.o.requires
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message_handler.cc.o.provides.build
+.PHONY : CMakeFiles/civan.dir/civan/store/message_handler.cc.o.provides
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o.provides.build: CMakeFiles/civan.dir/civan/store/message_handler.cc.o
+
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o: CMakeFiles/civan.dir/flags.make
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o: ../civan/store/message.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/civan.dir/civan/store/message.pb.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/store/message.pb.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/store/message.pb.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/store/message.pb.cc
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/civan.dir/civan/store/message.pb.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/message.pb.cc\" $(CXX_FLAGS) -E /home/dell/jqchen/cpp_project/civan/civan/store/message.pb.cc > CMakeFiles/civan.dir/civan/store/message.pb.cc.i
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/civan.dir/civan/store/message.pb.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"civan/store/message.pb.cc\" $(CXX_FLAGS) -S /home/dell/jqchen/cpp_project/civan/civan/store/message.pb.cc -o CMakeFiles/civan.dir/civan/store/message.pb.cc.s
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o.requires:
+
+.PHONY : CMakeFiles/civan.dir/civan/store/message.pb.cc.o.requires
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o.provides: CMakeFiles/civan.dir/civan/store/message.pb.cc.o.requires
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message.pb.cc.o.provides.build
+.PHONY : CMakeFiles/civan.dir/civan/store/message.pb.cc.o.provides
+
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o.provides.build: CMakeFiles/civan.dir/civan/store/message.pb.cc.o
+
+
 CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o: CMakeFiles/civan.dir/flags.make
 CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o: ../civan/http/http11_parser.rl.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/http/http11_parser.rl.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/http/http11_parser.rl.cc
 
 CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.i: cmake_force
@@ -605,7 +677,7 @@ CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o.provides.build: CMakeFiles
 
 CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o: CMakeFiles/civan.dir/flags.make
 CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o: ../civan/http/httpclient_parser.rl.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/http/httpclient_parser.rl.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/http/httpclient_parser.rl.cc
 
 CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.i: cmake_force
@@ -629,7 +701,7 @@ CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o.provides.build: CMakeF
 
 CMakeFiles/civan.dir/civan/uri.rl.cc.o: CMakeFiles/civan.dir/flags.make
 CMakeFiles/civan.dir/civan/uri.rl.cc.o: ../civan/uri.rl.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/civan.dir/civan/uri.rl.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/civan.dir/civan/uri.rl.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) -D__FILE__=\"civan/uri.rl.cc\" $(CXX_FLAGS) -o CMakeFiles/civan.dir/civan/uri.rl.cc.o -c /home/dell/jqchen/cpp_project/civan/civan/uri.rl.cc
 
 CMakeFiles/civan.dir/civan/uri.rl.cc.i: cmake_force
@@ -674,6 +746,9 @@ civan_OBJECTS = \
 "CMakeFiles/civan.dir/civan/tcp_server.cc.o" \
 "CMakeFiles/civan.dir/civan/stream.cc.o" \
 "CMakeFiles/civan.dir/civan/socket_stream.cc.o" \
+"CMakeFiles/civan.dir/civan/store/session.cc.o" \
+"CMakeFiles/civan.dir/civan/store/message_handler.cc.o" \
+"CMakeFiles/civan.dir/civan/store/message.pb.cc.o" \
 "CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o" \
 "CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o" \
 "CMakeFiles/civan.dir/civan/uri.rl.cc.o"
@@ -702,12 +777,15 @@ civan_EXTERNAL_OBJECTS =
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/tcp_server.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/stream.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/socket_stream.cc.o
+../lib/libcivan.so: CMakeFiles/civan.dir/civan/store/session.cc.o
+../lib/libcivan.so: CMakeFiles/civan.dir/civan/store/message_handler.cc.o
+../lib/libcivan.so: CMakeFiles/civan.dir/civan/store/message.pb.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/civan/uri.rl.cc.o
 ../lib/libcivan.so: CMakeFiles/civan.dir/build.make
 ../lib/libcivan.so: CMakeFiles/civan.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX shared library ../lib/libcivan.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dell/jqchen/cpp_project/civan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX shared library ../lib/libcivan.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/civan.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -736,6 +814,9 @@ CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/http/servlet.cc.o.requ
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/tcp_server.cc.o.requires
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/stream.cc.o.requires
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/socket_stream.cc.o.requires
+CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/store/session.cc.o.requires
+CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/store/message_handler.cc.o.requires
+CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/store/message.pb.cc.o.requires
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o.requires
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o.requires
 CMakeFiles/civan.dir/requires: CMakeFiles/civan.dir/civan/uri.rl.cc.o.requires

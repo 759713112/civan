@@ -11,9 +11,11 @@ static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
 HttpServer::HttpServer(bool keepalive
                //,civan::IOManager* worker
                //,civan::IOManager* io_worker
-               ,civan::IOManager* accept_worker)
-    :TcpServer(accept_worker)
-    ,m_isKeepalive(keepalive) {
+               , civan::IOManager* accept_worker
+               , int worker_num
+               , int thread_per_worker)
+    : TcpServer(accept_worker, worker_num, thread_per_worker)
+    , m_isKeepalive(keepalive) {
     m_dispatch.reset(new ServletDispatch);
 
     //m_type = "http";

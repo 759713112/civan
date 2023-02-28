@@ -1,11 +1,3 @@
-/**
- * @file stream.h
- * @brief 流接口
- * @author civan.yin
- * @email 564628276@qq.com
- * @date 2019-06-06
- * @copyright Copyright (c) 2019年 civan.yin All rights reserved (www.civan.top)
- */
 #ifndef __CIVAN_STREAM_H__
 #define __CIVAN_STREAM_H__
 

@@ -248,6 +248,51 @@ CMakeFiles/civan.dir/civan/socket_stream.cc.o: .././civan/util.h
 CMakeFiles/civan.dir/civan/socket_stream.cc.o: ../civan/socket_stream.cc
 CMakeFiles/civan.dir/civan/socket_stream.cc.o: ../civan/socket_stream.h
 
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o: .././civan/store/message.pb.h
+CMakeFiles/civan.dir/civan/store/message.pb.cc.o: ../civan/store/message.pb.cc
+
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/address.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/bytearray.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/endian.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/fiber.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/iomanager.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/log.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/mutex.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/noncopyable.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/scheduler.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/singleton.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/socket.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/socket_stream.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/stream.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/thread.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/timer.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: .././civan/util.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: ../civan/store/message.pb.h
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: ../civan/store/message_handler.cc
+CMakeFiles/civan.dir/civan/store/message_handler.cc.o: ../civan/store/message_handler.h
+
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/address.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/bytearray.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/config.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/endian.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/fiber.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/iomanager.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/log.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/mutex.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/noncopyable.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/scheduler.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/singleton.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/socket.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/socket_stream.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/stream.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/thread.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/timer.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: .././civan/util.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: ../civan/store/message.pb.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: ../civan/store/message_handler.h
+CMakeFiles/civan.dir/civan/store/session.cc.o: ../civan/store/session.cc
+CMakeFiles/civan.dir/civan/store/session.cc.o: ../civan/store/session.h
+
 CMakeFiles/civan.dir/civan/stream.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/stream.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/stream.cc.o: ../civan/stream.cc

@@ -48,6 +48,12 @@ CXX_DEFINES = -Dcivan_EXPORTS
 
 # Custom defines: CMakeFiles/civan.dir/civan/socket_stream.cc.o_DEFINES = __FILE__="civan/socket_stream.cc"
 
+# Custom defines: CMakeFiles/civan.dir/civan/store/session.cc.o_DEFINES = __FILE__="civan/store/session.cc"
+
+# Custom defines: CMakeFiles/civan.dir/civan/store/message_handler.cc.o_DEFINES = __FILE__="civan/store/message_handler.cc"
+
+# Custom defines: CMakeFiles/civan.dir/civan/store/message.pb.cc.o_DEFINES = __FILE__="civan/store/message.pb.cc"
+
 # Custom defines: CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o_DEFINES = __FILE__="civan/http/http11_parser.rl.cc"
 
 # Custom defines: CMakeFiles/civan.dir/civan/http/httpclient_parser.rl.cc.o_DEFINES = __FILE__="civan/http/httpclient_parser.rl.cc"

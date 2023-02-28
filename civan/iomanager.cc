@@ -359,7 +359,6 @@ void IOManager::idle() {
                 --m_pendingEventCount;
             }
             if (real_events & WRITE) {
-                
                 fd_ctx->triggerEvent(WRITE);
                 --m_pendingEventCount;
             }

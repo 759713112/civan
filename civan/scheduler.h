@@ -11,7 +11,7 @@ namespace civan {
 class  Scheduler{
 public:
     typedef std::shared_ptr<Scheduler> ptr;
-    typedef Mutex MutexType;
+    typedef SpinLock MutexType;
 
     Scheduler(size_t threads = 1, bool use_caller = true, const std::string& name = "");
     virtual ~Scheduler();

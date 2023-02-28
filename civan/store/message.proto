@@ -1,0 +1,41 @@
+syntax = "proto3";
+package civan.store;
+
+
+option optimize_for = LITE_RUNTIME;
+
+
+message entity_name_t {
+    uint32 type = 1;
+    uint32 id = 2;
+}
+enum MSG_TYPE {
+    MSG_OSD_PING = 0;
+    MSG_OSD_OP = 1;
+};
+message msg_header {
+    uint64 seq = 1;       /* 当前session内 消息的唯一 序号 */ 
+
+    uint64 tid = 2;        /* transaction id */
+
+    MSG_TYPE type = 3;      /* message type */
+
+    uint32 priority = 4;    /* priority.  higher value == higher priority */
+
+    uint32 version = 5;    /* version of message encoding */
+
+    uint32 front_len = 6;   /* bytes in main payload */
+
+    uint32 middle_len = 7;  /* bytes in middle payload */
+
+    uint32 data_len = 8;    /* bytes of data payload */
+
+    uint32 data_off = 9;    /* sender: include full offset; 对象的数据偏移量*/
+
+
+    entity_name_t src = 10; //消息源
+    /* oldest code we think can decode this.  unknown if zero. */
+    uint32 compat_version = 11;
+    uint32 reserved = 12;
+    uint32 crc = 13;       /* header crc32c */
+}

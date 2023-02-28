@@ -807,6 +807,87 @@ civan/socket_stream.cc.s:
 	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/socket_stream.cc.s
 .PHONY : civan/socket_stream.cc.s
 
+civan/store/message.pb.o: civan/store/message.pb.cc.o
+
+.PHONY : civan/store/message.pb.o
+
+# target to build an object file
+civan/store/message.pb.cc.o:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message.pb.cc.o
+.PHONY : civan/store/message.pb.cc.o
+
+civan/store/message.pb.i: civan/store/message.pb.cc.i
+
+.PHONY : civan/store/message.pb.i
+
+# target to preprocess a source file
+civan/store/message.pb.cc.i:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message.pb.cc.i
+.PHONY : civan/store/message.pb.cc.i
+
+civan/store/message.pb.s: civan/store/message.pb.cc.s
+
+.PHONY : civan/store/message.pb.s
+
+# target to generate assembly for a file
+civan/store/message.pb.cc.s:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message.pb.cc.s
+.PHONY : civan/store/message.pb.cc.s
+
+civan/store/message_handler.o: civan/store/message_handler.cc.o
+
+.PHONY : civan/store/message_handler.o
+
+# target to build an object file
+civan/store/message_handler.cc.o:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message_handler.cc.o
+.PHONY : civan/store/message_handler.cc.o
+
+civan/store/message_handler.i: civan/store/message_handler.cc.i
+
+.PHONY : civan/store/message_handler.i
+
+# target to preprocess a source file
+civan/store/message_handler.cc.i:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message_handler.cc.i
+.PHONY : civan/store/message_handler.cc.i
+
+civan/store/message_handler.s: civan/store/message_handler.cc.s
+
+.PHONY : civan/store/message_handler.s
+
+# target to generate assembly for a file
+civan/store/message_handler.cc.s:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/message_handler.cc.s
+.PHONY : civan/store/message_handler.cc.s
+
+civan/store/session.o: civan/store/session.cc.o
+
+.PHONY : civan/store/session.o
+
+# target to build an object file
+civan/store/session.cc.o:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/session.cc.o
+.PHONY : civan/store/session.cc.o
+
+civan/store/session.i: civan/store/session.cc.i
+
+.PHONY : civan/store/session.i
+
+# target to preprocess a source file
+civan/store/session.cc.i:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/session.cc.i
+.PHONY : civan/store/session.cc.i
+
+civan/store/session.s: civan/store/session.cc.s
+
+.PHONY : civan/store/session.s
+
+# target to generate assembly for a file
+civan/store/session.cc.s:
+	$(MAKE) -f CMakeFiles/civan.dir/build.make CMakeFiles/civan.dir/civan/store/session.cc.s
+.PHONY : civan/store/session.cc.s
+
 civan/stream.o: civan/stream.cc.o
 
 .PHONY : civan/stream.o
@@ -1452,6 +1533,15 @@ help:
 	@echo "... civan/socket_stream.o"
 	@echo "... civan/socket_stream.i"
 	@echo "... civan/socket_stream.s"
+	@echo "... civan/store/message.pb.o"
+	@echo "... civan/store/message.pb.i"
+	@echo "... civan/store/message.pb.s"
+	@echo "... civan/store/message_handler.o"
+	@echo "... civan/store/message_handler.i"
+	@echo "... civan/store/message_handler.s"
+	@echo "... civan/store/session.o"
+	@echo "... civan/store/session.i"
+	@echo "... civan/store/session.s"
 	@echo "... civan/stream.o"
 	@echo "... civan/stream.i"
 	@echo "... civan/stream.s"

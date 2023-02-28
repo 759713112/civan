@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package civan;
+
+message Host {
+	string Name = 1;
+	string IPAddr = 2;
+}

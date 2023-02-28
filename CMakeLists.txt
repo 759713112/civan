@@ -42,6 +42,10 @@ set(LIB_SRC
     civan/tcp_server.cc
     civan/stream.cc
     civan/socket_stream.cc
+    #store
+    civan/store/session.cc
+    civan/store/message_handler.cc
+    civan/store/message.pb.cc
 
 
     )
@@ -60,6 +64,7 @@ set (LIB_LIB
     pthread
     yaml-cpp
     dl
+    protobuf 
     )
 
 

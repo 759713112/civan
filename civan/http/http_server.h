@@ -14,7 +14,9 @@ public:
     HttpServer(bool keepalive = false
                 //,civan::IOManager* worker = civan::IOManager::GetThis()
                 //,civan::IOManager* io_worker = civan::IOManager::GetThis()
-                , civan::IOManager* accept_worker = civan::IOManager::GetThis());
+                , civan::IOManager* accept_worker = civan::IOManager::GetThis()
+                , int worker_num = 0
+                , int thread_per_worker = 1);
 
     ServletDispatch::ptr getServletDispatch() const { return m_dispatch;}
     void setServletDispatch(ServletDispatch::ptr v) { m_dispatch = v;}
