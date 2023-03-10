@@ -6,13 +6,17 @@
 int main(int argc, char const* argv[])
 {
     civan::Logger::ptr logger(new civan::Logger);
-    logger->addAppender(civan::LogAppender::ptr(new civan::StdoutLogAppender));
+    logger->setStdoutAppender();
     logger->addAppender(civan::LogAppender::ptr(new civan::FileLogAppender("try.txt")));
     
 
     //logger->log(civan::LogLevel::DEBUG, event);
     std::cout<<"hello" << std::endl;
 
+    CIVAN_LOG_INFO(logger) << "test fff";
+    CIVAN_LOG_INFO(logger) << "test fff";
+    CIVAN_LOG_INFO(logger) << "test fff";
+    CIVAN_LOG_INFO(logger) << "test fff";
     CIVAN_LOG_INFO(logger) << "test fff";
 
     // auto l = civan::LoggerMgr::GetInstance()->getLogger("xx");

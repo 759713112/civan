@@ -3,6 +3,8 @@
 
 CMakeFiles/test_address.dir/tests/test_address.cc.o
  /home/dell/jqchen/cpp_project/civan/civan/address.h
+ /home/dell/jqchen/cpp_project/civan/civan/bytearray.h
+ /home/dell/jqchen/cpp_project/civan/civan/endian.h
  /home/dell/jqchen/cpp_project/civan/civan/fiber.h
  /home/dell/jqchen/cpp_project/civan/civan/log.h
  /home/dell/jqchen/cpp_project/civan/civan/mutex.h

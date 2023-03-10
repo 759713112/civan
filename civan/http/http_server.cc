@@ -6,7 +6,7 @@
 namespace civan {
 namespace http {
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 HttpServer::HttpServer(bool keepalive
                //,civan::IOManager* worker

@@ -7,7 +7,7 @@
 #include<algorithm>
 namespace civan {
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 enum EpollCtlOp {
 };

@@ -9,7 +9,7 @@
 
 
 namespace civan {
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
  
 ByteArray::Node::Node(size_t s) 
     : ptr(new char[s])
@@ -488,6 +488,22 @@ void ByteArray::setPosition(size_t v) {
         m_cur = m_cur->next;
     }
     
+}
+
+
+bool ByteArray::writeToFile(std::ofstream& ofs) const {
+    int64_t read_size = getReadSize();
+    int64_t pos = m_position;
+    Node* cur = m_cur;
+    while (read_size > 0) {
+        int diff = pos % m_baseSize;
+        int64_t len = (read_size > (int64_t)m_baseSize ? m_baseSize : read_size) - diff;
+        ofs.write(cur->ptr + diff, len);
+        cur = cur->next;
+        pos += len;
+        read_size -= len;
+    }
+    return true;
 }
 
 

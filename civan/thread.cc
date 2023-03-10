@@ -3,32 +3,7 @@
 #include <errno.h>
 #include "log.h"
 namespace civan {
-static auto g_logger = CIVAN_LOG_NAME("system");
-
-Semaphore::Semaphore(uint32_t count) {
-    if (sem_init(&m_semaphore, 0, count)) {
-        throw std::logic_error("sem_init error");
-    }
-}
-Semaphore::~Semaphore() {
-    sem_destroy(&m_semaphore);
-}
-
-void Semaphore::wait() {
-    while (true) {
-        if (!sem_wait(&m_semaphore)) {
-            return;
-        } else if (errno != EINTR) {
-            throw std::logic_error("sem_wait error");
-        }
-    }
-}
-void Semaphore::notify() {
-    if (sem_post(&m_semaphore)) {
-        throw std::logic_error("sem_post error");
-    }
-}
-
+static auto g_logger = CIVAN_LOG_NAME("root");
 
 Thread::Thread(std::function<void()> cb, const std::string& name) : m_cb(cb) {
     if (name.empty()) {

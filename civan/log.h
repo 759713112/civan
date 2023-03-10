@@ -15,6 +15,7 @@
 #include "util.h"
 #include "thread.h"
 #include "mutex.h"
+#include "bytearray.h"
 
 #define CIVAN_LOG_LEVEL(logger, level) \
     if (logger->getLevel() <= level) \
@@ -136,24 +137,23 @@ private:
 //日志输出地
 class LogAppender {
 public:
-    typedef SpinLock MutexType;
     typedef std::shared_ptr<LogAppender> ptr;
     LogAppender() : m_level(LogLevel::DEBUG) { }
     virtual ~LogAppender() {}
 
-    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
-    
-    void setFormatter(LogFormatter::ptr val);
-    LogFormatter::ptr getFormatter();
-    void setFormatter(const std::string& val);
+    virtual void log(LogLevel::Level level, const std::string& log_string) { }
+    virtual void log(ByteArray::ptr bufferToWrite) { }
+    // void setFormatter(LogFormatter::ptr val);
+    // LogFormatter::ptr getFormatter();
+    // void setFormatter(const std::string& val);
 
     LogLevel::Level getLevel() { return m_level; }
     void setLevel(LogLevel::Level var) { m_level = var; }
     virtual std::string toYamlString() = 0;
 protected:
     LogLevel::Level m_level;
-    MutexType m_mutex;
-    LogFormatter::ptr m_formatter; 
+    Mutex m_mutex;
+    //LogFormatter::ptr m_formatter; 
 };
 
 
@@ -162,12 +162,14 @@ protected:
 class Logger : public std::enable_shared_from_this<Logger> {
 friend class LoggerManager;
 public:
-    typedef SpinLock MutexType;
     typedef std::shared_ptr<Logger> ptr;
 
-    Logger(const std::string& name = "root");
+    Logger(const std::string& name = "root"
+            , uint32_t buffer_node_size = 4096
+            , int flushInterval = 3);
+    virtual ~Logger() { stop(); }
     void log(LogLevel::Level level, LogEvent::ptr event);
-
+    
     void debug(LogEvent::ptr event);
     void info(LogEvent::ptr event);
     void warn(LogEvent::ptr event);
@@ -176,6 +178,7 @@ public:
 
     void addAppender(LogAppender::ptr appender);
     void deleteAppender(LogAppender::ptr appender);
+    void setStdoutAppender();
     void clearAppenders();
 
     LogLevel::Level getLevel() const { return m_level; }
@@ -187,13 +190,28 @@ public:
     LogFormatter::ptr getFormatter();
 
     std::string toYamlString();
+
+    void start();
+    void stop();
+    void asyncLogFunc();
 private:
     std::string m_name;
     LogLevel::Level m_level;
     std::list<LogAppender::ptr> m_appenders;
+    LogAppender::ptr m_stdoutAppender;
     LogFormatter::ptr m_formatter;
     Logger::ptr m_root;
-    MutexType m_mutex;
+
+    ByteArray::ptr currentBuffer;
+    ByteArray::ptr bufferToWrite;
+    Mutex m_mutex;
+    Condition m_cond;
+    const int flushInterval_;
+    std::atomic<bool> running_;
+    
+    Thread m_thread;
+
+    //Semaphore m_semaphore;
 };
 
 //输出到控制台
@@ -201,7 +219,7 @@ class StdoutLogAppender : public LogAppender {
 public:
     StdoutLogAppender() : LogAppender() {}
     typedef  std::shared_ptr<StdoutLogAppender> ptr;
-    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) override;
+    virtual void log(LogLevel::Level level, const std::string& log_string) override;
     virtual std::string toYamlString() override;
 };
 
@@ -210,20 +228,21 @@ public:
     typedef std::shared_ptr<FileLogAppender> ptr;
     FileLogAppender(const std::string& filename);
     ~FileLogAppender() { m_filestream.close(); }
-    void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) override;
+    void log(ByteArray::ptr bufferToWrite) override;
     bool reopen();
 
     virtual std::string toYamlString() override;
 private:
     std::string m_filename;
     std::ofstream m_filestream;
-
 };
 
 class LoggerManager {
 public:
     LoggerManager();
-    typedef SpinLock MutexType;
+    ~LoggerManager() { 
+        std::cout << "deconstruct LoggerMgr" << std::endl; 
+    }
     Logger::ptr getLogger(const std::string& name);
     
     void init();
@@ -232,7 +251,7 @@ public:
 
     std::string toYamlString();
 private:
-    MutexType m_mutex;
+    Mutex m_mutex;
     std::map<std::string, Logger::ptr> m_loggers;
     Logger::ptr m_root;
 };

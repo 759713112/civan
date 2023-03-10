@@ -8,7 +8,7 @@ static thread_local Scheduler* t_scheduler = nullptr;
 static thread_local Fiber* t_fiber = nullptr;
 
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
     :m_name(name) {

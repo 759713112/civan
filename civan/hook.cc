@@ -8,7 +8,7 @@
 #include "fd_manager.h"
 #include "macro.h"
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 namespace civan {
 
 static civan::ConfigVar<int>::ptr g_tcp_connect_timeout =

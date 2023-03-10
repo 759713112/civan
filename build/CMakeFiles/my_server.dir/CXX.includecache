@@ -231,6 +231,8 @@ thread.h
 .././civan/thread.h
 mutex.h
 .././civan/mutex.h
+bytearray.h
+.././civan/bytearray.h
 
 .././civan/macro.h
 string.h
@@ -377,4 +379,6 @@ civan/civan.h
 /home/dell/jqchen/cpp_project/civan/examples/civan/civan.h
 civan/log.h
 /home/dell/jqchen/cpp_project/civan/examples/civan/log.h
+civan/config.h
+/home/dell/jqchen/cpp_project/civan/examples/civan/config.h
 

@@ -3,6 +3,7 @@
 
 CMakeFiles/civan.dir/civan/address.cc.o: ../civan/address.cc
 CMakeFiles/civan.dir/civan/address.cc.o: ../civan/address.h
+CMakeFiles/civan.dir/civan/address.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/address.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/address.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/address.cc.o: ../civan/log.h
@@ -23,8 +24,10 @@ CMakeFiles/civan.dir/civan/bytearray.cc.o: ../civan/singleton.h
 CMakeFiles/civan.dir/civan/bytearray.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/bytearray.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/config.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/config.cc.o: ../civan/config.cc
 CMakeFiles/civan.dir/civan/config.cc.o: ../civan/config.h
+CMakeFiles/civan.dir/civan/config.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/config.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/config.cc.o: ../civan/log.h
 CMakeFiles/civan.dir/civan/config.cc.o: ../civan/mutex.h
@@ -41,7 +44,9 @@ CMakeFiles/civan.dir/civan/fd_manager.cc.o: ../civan/noncopyable.h
 CMakeFiles/civan.dir/civan/fd_manager.cc.o: ../civan/singleton.h
 CMakeFiles/civan.dir/civan/fd_manager.cc.o: ../civan/thread.h
 
+CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/config.h
+CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/fiber.cc
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/log.h
@@ -53,7 +58,9 @@ CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/singleton.h
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/fiber.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/config.h
+CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/fd_manager.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/hook.cc
@@ -69,6 +76,8 @@ CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/timer.h
 CMakeFiles/civan.dir/civan/hook.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/http/http.cc.o: .././civan/bytearray.h
+CMakeFiles/civan.dir/civan/http/http.cc.o: .././civan/endian.h
 CMakeFiles/civan.dir/civan/http/http.cc.o: .././civan/fiber.h
 CMakeFiles/civan.dir/civan/http/http.cc.o: .././civan/log.h
 CMakeFiles/civan.dir/civan/http/http.cc.o: .././civan/mutex.h
@@ -83,7 +92,9 @@ CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o: ../civan/http/http11_comm
 CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o: ../civan/http/http11_parser.h
 CMakeFiles/civan.dir/civan/http/http11_parser.rl.cc.o: ../civan/http/http11_parser.rl.cc
 
+CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/bytearray.h
 CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/config.h
+CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/endian.h
 CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/fiber.h
 CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/log.h
 CMakeFiles/civan.dir/civan/http/http_parser.cc.o: .././civan/mutex.h
@@ -178,6 +189,8 @@ CMakeFiles/civan.dir/civan/http/servlet.cc.o: ../civan/http/httpclient_parser.h
 CMakeFiles/civan.dir/civan/http/servlet.cc.o: ../civan/http/servlet.cc
 CMakeFiles/civan.dir/civan/http/servlet.cc.o: ../civan/http/servlet.h
 
+CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/iomanager.cc
 CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/iomanager.h
@@ -191,16 +204,21 @@ CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/timer.h
 CMakeFiles/civan.dir/civan/iomanager.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/log.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/config.h
+CMakeFiles/civan.dir/civan/log.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/log.cc
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/log.h
+CMakeFiles/civan.dir/civan/log.cc.o: ../civan/macro.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/mutex.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/noncopyable.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/singleton.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/log.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/hook.h
 CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/log.h
@@ -214,6 +232,8 @@ CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/scheduler.cc.o: ../civan/util.h
 
 CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/address.h
+CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/fd_manager.h
 CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/socket.cc.o: ../civan/hook.h
@@ -299,7 +319,9 @@ CMakeFiles/civan.dir/civan/stream.cc.o: ../civan/stream.cc
 CMakeFiles/civan.dir/civan/stream.cc.o: ../civan/stream.h
 
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/address.h
+CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/bytearray.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/config.h
+CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/iomanager.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/log.h
@@ -314,6 +336,8 @@ CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/timer.h
 CMakeFiles/civan.dir/civan/tcp_server.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/log.h
 CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/mutex.h
@@ -323,6 +347,8 @@ CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/thread.cc
 CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/thread.h
 CMakeFiles/civan.dir/civan/thread.cc.o: ../civan/util.h
 
+CMakeFiles/civan.dir/civan/timer.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/timer.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/timer.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/timer.cc.o: ../civan/log.h
 CMakeFiles/civan.dir/civan/timer.cc.o: ../civan/mutex.h
@@ -337,6 +363,8 @@ CMakeFiles/civan.dir/civan/uri.rl.cc.o: ../civan/address.h
 CMakeFiles/civan.dir/civan/uri.rl.cc.o: ../civan/uri.h
 CMakeFiles/civan.dir/civan/uri.rl.cc.o: ../civan/uri.rl.cc
 
+CMakeFiles/civan.dir/civan/util.cc.o: ../civan/bytearray.h
+CMakeFiles/civan.dir/civan/util.cc.o: ../civan/endian.h
 CMakeFiles/civan.dir/civan/util.cc.o: ../civan/fiber.h
 CMakeFiles/civan.dir/civan/util.cc.o: ../civan/log.h
 CMakeFiles/civan.dir/civan/util.cc.o: ../civan/mutex.h

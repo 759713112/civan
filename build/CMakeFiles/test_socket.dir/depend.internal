@@ -3,6 +3,8 @@
 
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o
  .././civan/address.h
+ .././civan/bytearray.h
+ .././civan/endian.h
  .././civan/fiber.h
  .././civan/iomanager.h
  .././civan/log.h

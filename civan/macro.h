@@ -17,7 +17,7 @@
 
 #define CIVAN_ASSERT(x) \
     if (CIVAN_UNLICKLY(!(x))) { \
-        CIVAN_LOG_ERROR(CIVAN_LOG_ROOT()) << "Assertion" << #x \
+        CIVAN_LOG_ERROR(CIVAN_LOG_ROOT()) << "Assertion " << #x \
             << "\nbacktrace:\n" \
             << civan::BacktraceToString(100, 2, "    "); \
         assert(x); \
@@ -25,7 +25,7 @@
 
 #define CIVAN_ASSERT2(x, w) \
     if (CIVAN_UNLICKLY(!(x)))  { \
-        CIVAN_LOG_ERROR(CIVAN_LOG_ROOT()) << "Assertion" << #x \
+        CIVAN_LOG_ERROR(CIVAN_LOG_ROOT()) << "Assertion " << #x \
             << "\n" << w \
             << "\nbacktrace:\n" \
             << civan::BacktraceToString(100, 2, "    "); \

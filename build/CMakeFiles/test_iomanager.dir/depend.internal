@@ -5,8 +5,10 @@ CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
  .././civan/address.h
  .././civan/noncopyable.h
  .././civan/socket.h
+ /home/dell/jqchen/cpp_project/civan/civan/bytearray.h
  /home/dell/jqchen/cpp_project/civan/civan/civan.h
  /home/dell/jqchen/cpp_project/civan/civan/config.h
+ /home/dell/jqchen/cpp_project/civan/civan/endian.h
  /home/dell/jqchen/cpp_project/civan/civan/fiber.h
  /home/dell/jqchen/cpp_project/civan/civan/iomanager.h
  /home/dell/jqchen/cpp_project/civan/civan/log.h

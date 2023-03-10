@@ -4,8 +4,10 @@
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: .././civan/address.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: .././civan/noncopyable.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: .././civan/socket.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/bytearray.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/civan.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/config.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/endian.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/fiber.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/iomanager.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: ../civan/log.h

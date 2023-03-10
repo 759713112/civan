@@ -7,7 +7,7 @@ static civan::ConfigVar<uint64_t>::ptr g_tcp_server_read_timeout =
     civan::Config::Lookup("tcp_server.read_timeout", (uint64_t)(60 * 1000 * 2),
                     "tcp server read timeout");
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 TcpServer::TcpServer(civan::IOManager* accept_worker
         , int worker_num, int thread_per_worker)

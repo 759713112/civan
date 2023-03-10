@@ -168,6 +168,7 @@ public:
     void setPosition(size_t v);
 
     bool writeToFile(const std::string& name) const;
+    bool writeToFile(std::ofstream& ofs) const;
     bool readFromFile(const std::string& name);
 
     size_t getBaseSize() const { return m_baseSize; }
@@ -183,6 +184,7 @@ public:
     uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len = ~0ull) const;
     uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len, uint64_t position) const;
     uint64_t getWriteBuffers(std::vector<iovec>& buffers, uint64_t len);
+
 private:
     void addCapacity(size_t size);
     size_t getCapacity() const { return m_capacity - m_position; }

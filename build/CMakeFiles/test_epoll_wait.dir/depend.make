@@ -4,6 +4,8 @@
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: .././civan/address.h
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: .././civan/noncopyable.h
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: .././civan/socket.h
+CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: ../civan/bytearray.h
+CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: ../civan/endian.h
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: ../civan/fiber.h
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: ../civan/iomanager.h
 CMakeFiles/test_epoll_wait.dir/tests/test_epoll_wait.cc.o: ../civan/log.h

@@ -5,7 +5,7 @@
 
 namespace civan {
 namespace store {
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 static civan::ConfigVar<uint32_t>::ptr g_store_request_buffer_size =
     civan::Config::Lookup("store.request.buffer_size"

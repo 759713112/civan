@@ -2,23 +2,23 @@
 #include "../civan/log.h"
 #include <yaml-cpp/yaml.h>
 #include <iostream>
-civan::ConfigVar<int>::ptr g_int_value_config = 
-    civan::Config::Lookup("system.port", (int)8080, "system port");
-// civan::ConfigVar<float>::ptr g_int_valuex_config =
-//     civan::Config::Lookup("system.port", (float)8080, "system port");
-civan::ConfigVar<std::vector<int>>::ptr g_vec_value_config = 
-    civan::Config::Lookup("system.int_vec", std::vector<int>{5,5}, "system int_vec");
+// civan::ConfigVar<int>::ptr g_int_value_config = 
+//     civan::Config::Lookup("system.port", (int)8080, "system port");
+// // civan::ConfigVar<float>::ptr g_int_valuex_config =
+// //     civan::Config::Lookup("system.port", (float)8080, "system port");
+// civan::ConfigVar<std::vector<int>>::ptr g_vec_value_config = 
+//     civan::Config::Lookup("system.int_vec", std::vector<int>{5,5}, "system int_vec");
 
-civan::ConfigVar<civan::Person>::ptr g_person_value_config = 
-    civan::Config::Lookup("system.person", civan::Person(), "system int_vec");
+// civan::ConfigVar<civan::Person>::ptr g_person_value_config = 
+//     civan::Config::Lookup("system.person", civan::Person(), "system int_vec");
 
-civan::ConfigVar<std::map<std::string, int>>::ptr g_map_value_config = 
-    civan::Config::Lookup("system.str_int_map", std::map<std::string, int>{{"a", 4}, {"b", 3}}, "system int_vec");
+// civan::ConfigVar<std::map<std::string, int>>::ptr g_map_value_config = 
+//     civan::Config::Lookup("system.str_int_map", std::map<std::string, int>{{"a", 4}, {"b", 3}}, "system int_vec");
 
-civan::ConfigVar<std::map<std::string, civan::Person> >::ptr g_person_map_value_config = 
-    civan::Config::Lookup("system.person_map" 
-                            , std::map<std::string, civan::Person>{ {"aa", civan::Person()}, {"cc", civan::Person()}}
-                            , "system int_vec");
+// civan::ConfigVar<std::map<std::string, civan::Person> >::ptr g_person_map_value_config = 
+//     civan::Config::Lookup("system.person_map" 
+//                             , std::map<std::string, civan::Person>{ {"aa", civan::Person()}, {"cc", civan::Person()}}
+//                             , "system int_vec");
 
 void print_yaml(const YAML::Node& node, int level) {
     if(node.IsScalar()) {
@@ -54,7 +54,7 @@ void test_yaml() {
 void test_log() {
     CIVAN_LOG_DEBUG(CIVAN_LOG_NAME("root")) << "ffff";
     std::cout<< civan::LoggerMgr::GetInstance()->toYamlString() << std::endl;
-    YAML::Node root = YAML::LoadFile("/home/dell/jqchen/cpp_project/civan/bin/conf/test.yml");
+    YAML::Node root = YAML::LoadFile("/home/dell/jqchen/cpp_project/civan/bin/conf/log.yml");
     civan::Config::LoadFromYaml(root);
     //CIVAN_LOG_INFO(CIVAN_LOG_ROOT()) << root;
     std::cout << std::endl;
@@ -88,14 +88,14 @@ int main(int argc, char** argv) {
 
     // CIVAN_LOG_INFO(CIVAN_LOG_ROOT()) << g_person_map_value_config->toString();
     test_log();
-    std::cout << "visit" << std::endl;
-    civan::Config::Visit([](civan::ConfigVarBase::ptr var) {
-        CIVAN_LOG_INFO(CIVAN_LOG_ROOT()) << "name=" << var->getName()
-                    << " description=" << var->getDescription()
-                    << " typename=" << var->getTypeName()
-                    << " value=" << var->toString();
-    });
-    std::cout << "visit" << std::endl;
+    // std::cout << "visit" << std::endl;
+    // civan::Config::Visit([](civan::ConfigVarBase::ptr var) {
+    //     CIVAN_LOG_INFO(CIVAN_LOG_ROOT()) << "name=" << var->getName()
+    //                 << " description=" << var->getDescription()
+    //                 << " typename=" << var->getTypeName()
+    //                 << " value=" << var->toString();
+    // });
+    // std::cout << "visit" << std::endl;
 
 
     return 0;

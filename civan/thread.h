@@ -12,8 +12,6 @@
 #include "mutex.h"
 namespace civan {
 
-
-
 class Thread {
 public:
     typedef std::shared_ptr<Thread> ptr;
@@ -32,7 +30,6 @@ private:
     Thread(const Thread&) = delete;
     Thread(const Thread&&) = delete;
     Thread& operator=(const Thread&) = delete;
-
     static void* run(void *arg);
 private:
     pid_t m_id = -1;

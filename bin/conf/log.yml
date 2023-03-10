@@ -1,0 +1,13 @@
+logs:
+    - name: root
+      level: info
+      appenders:
+          - type: FileLogAppender
+            file: /home/dell/jqchen/cpp_project/civan/logs/root.txt
+          - type: StdoutLogAppender
+    - name: system
+      level: info
+      appenders:
+          - type: FileLogAppender
+            file: /home/dell/jqchen/cpp_project/civan/logs/system.txt
+          - type: StdoutLogAppender

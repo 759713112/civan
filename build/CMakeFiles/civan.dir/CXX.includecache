@@ -137,6 +137,8 @@ thread.h
 .././civan/thread.h
 mutex.h
 .././civan/mutex.h
+bytearray.h
+.././civan/bytearray.h
 
 .././civan/mutex.h
 noncopyable.h
@@ -659,6 +661,8 @@ time.h
 -
 string.h
 -
+macro.h
+/home/dell/jqchen/cpp_project/civan/civan/macro.h
 config.h
 /home/dell/jqchen/cpp_project/civan/civan/config.h
 
@@ -691,6 +695,8 @@ thread.h
 /home/dell/jqchen/cpp_project/civan/civan/thread.h
 mutex.h
 /home/dell/jqchen/cpp_project/civan/civan/mutex.h
+bytearray.h
+/home/dell/jqchen/cpp_project/civan/civan/bytearray.h
 
 /home/dell/jqchen/cpp_project/civan/civan/macro.h
 string.h

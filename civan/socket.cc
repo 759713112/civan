@@ -8,7 +8,7 @@
 namespace civan {
 
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 Socket::ptr Socket::CreateTCP(Address::ptr address) {
     Socket::ptr sock(new Socket(address->getFamily(), TCP, 0));

@@ -12,11 +12,27 @@ namespace civan {
 
 class Semaphore : Noncopyable  {
 public:
-    Semaphore(uint32_t count = 0);
-    ~Semaphore();
+    Semaphore(uint32_t count = 0) {
+        if (sem_init(&m_semaphore, 0, count)) {
+            throw std::logic_error("sem_init error");
+        }
+    }
+    ~Semaphore() { sem_destroy(&m_semaphore); }
 
-    void wait();
-    void notify();
+    void wait() {
+        while (true) {
+            if (!sem_wait(&m_semaphore)) {
+                return;
+            } else if (errno != EINTR) {
+                throw std::logic_error("sem_wait error");
+            }
+        }
+    }
+    void notify() {
+        if (sem_post(&m_semaphore)) {
+            throw std::logic_error("sem_post error");
+        }
+    }
 // private:
 //     Semaphore(const Semaphore&) = delete;
 //     Semaphore(const Semaphore&&) = delete;
@@ -24,6 +40,8 @@ public:
 private:
     sem_t m_semaphore;
 };
+
+
 
 template<typename T>
 class ScopedLockImpl : Noncopyable {
@@ -72,6 +90,10 @@ public:
 
     void unlock() {
         pthread_mutex_unlock(&m_mutex);
+    }
+
+    pthread_mutex_t* getPthreadMutex() {
+        return &m_mutex;
     }
 private:
     pthread_mutex_t m_mutex;
@@ -236,7 +258,66 @@ public:
     void unlock() {}
 };
 
+class Condition : Noncopyable
+{
+public:
+    explicit Condition(Mutex& mutex)
+    : mutex_(mutex)
+    {
+        if (pthread_cond_init(&pcond_, NULL)) {
+            throw std::logic_error("condition error");
+        }
+    }
 
+    ~Condition()
+    {
+        pthread_cond_destroy(&pcond_);
+    }
+
+    void wait()
+    {
+        while (true) {
+            if (!pthread_cond_wait(&pcond_, mutex_.getPthreadMutex())) {
+                return;
+            } else if (errno != EINTR) {
+                throw std::logic_error("cond_wait error");
+            }
+        }
+    }
+
+    // returns true if time out, false otherwise.
+    bool waitForSeconds(double seconds) {
+        struct timespec abstime;
+        // FIXME: use CLOCK_MONOTONIC or CLOCK_MONOTONIC_RAW to prevent time rewind.
+        clock_gettime(CLOCK_REALTIME, &abstime);
+
+        const int64_t kNanoSecondsPerSecond = 1000000000;
+        int64_t nanoseconds = static_cast<int64_t>(seconds * kNanoSecondsPerSecond);
+
+        abstime.tv_sec += static_cast<time_t>((abstime.tv_nsec + nanoseconds) / kNanoSecondsPerSecond);
+        abstime.tv_nsec = static_cast<long>((abstime.tv_nsec + nanoseconds) % kNanoSecondsPerSecond);
+
+        return ETIMEDOUT == pthread_cond_timedwait(&pcond_, mutex_.getPthreadMutex(), &abstime);
+    }
+
+    void notify()
+    {
+        if (pthread_cond_signal(&pcond_)) {
+            throw std::logic_error("condition notify error");
+        }
+    }
+
+    void notifyAll()
+    {
+        if (pthread_cond_broadcast(&pcond_)) {
+            throw std::logic_error("condition broadcast error");
+        }
+    }
+
+private:
+    Mutex& mutex_;
+    pthread_cond_t pcond_;
+};
 
 } //namespace civan
 

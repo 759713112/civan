@@ -99,6 +99,8 @@ thread.h
 .././civan/thread.h
 mutex.h
 .././civan/mutex.h
+bytearray.h
+.././civan/bytearray.h
 
 .././civan/mutex.h
 noncopyable.h

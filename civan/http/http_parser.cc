@@ -6,7 +6,7 @@
 namespace civan {
 namespace http {
 
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 static civan::ConfigVar<uint64_t>::ptr g_http_request_buffer_size =
     civan::Config::Lookup("http.request.buffer_size"

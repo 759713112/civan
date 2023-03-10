@@ -2,12 +2,14 @@
 #include "civan/iomanager.h"
 #include "civan/civan.h"
 #include "civan/log.h"
-
+#include "civan/config.h"
 static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
-
+int iom_num = 5;
+int thread_num_per_iom = 1;
 void run() {
-    g_logger->setLevel(civan::LogLevel::Level::ERROR);
-    civan::http::HttpServer::ptr my_server(new civan::http::HttpServer(true, civan::IOManager::GetThis(), 5));
+    //g_logger->setLevel(civan::LogLevel::Level::ERROR);
+    civan::http::HttpServer::ptr my_server(new civan::http::HttpServer(true
+                , civan::IOManager::GetThis(), 0, thread_num_per_iom));
 
     civan::Address::ptr addr = civan::IPv4Address::Create("0.0.0.0", 8120);
     if (!my_server->bind(addr)) {
@@ -20,7 +22,14 @@ void run() {
 
 int main(int argc, char const *argv[])
 {
-    civan::IOManager iom(1, true, "main");
+    if (argc > 2) {
+        iom_num = atoi(argv[1]);
+        thread_num_per_iom = atoi(argv[2]);
+    }
+
+    YAML::Node root = YAML::LoadFile("/home/dell/jqchen/cpp_project/civan/bin/conf/log.yml");
+    civan::Config::LoadFromYaml(root);
+    civan::IOManager iom(2, false, "main");
     iom.schedule(run);
     return 0;
 }

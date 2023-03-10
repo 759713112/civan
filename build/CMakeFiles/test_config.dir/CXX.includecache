@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/dell/jqchen/cpp_project/civan/civan/bytearray.h
+memory
+-
+string
+-
+stdint.h
+-
+vector
+-
+sys/uio.h
+-
+endian.h
+/home/dell/jqchen/cpp_project/civan/civan/endian.h
+
 /home/dell/jqchen/cpp_project/civan/civan/config.h
 memory
 -
@@ -43,6 +57,12 @@ thread.h
 /home/dell/jqchen/cpp_project/civan/civan/thread.h
 mutex.h
 /home/dell/jqchen/cpp_project/civan/civan/mutex.h
+
+/home/dell/jqchen/cpp_project/civan/civan/endian.h
+byteswap.h
+-
+stdint.h
+-
 
 /home/dell/jqchen/cpp_project/civan/civan/fiber.h
 ucontext.h
@@ -83,6 +103,8 @@ thread.h
 /home/dell/jqchen/cpp_project/civan/civan/thread.h
 mutex.h
 /home/dell/jqchen/cpp_project/civan/civan/mutex.h
+bytearray.h
+/home/dell/jqchen/cpp_project/civan/civan/bytearray.h
 
 /home/dell/jqchen/cpp_project/civan/civan/mutex.h
 noncopyable.h

@@ -3,7 +3,7 @@
 #include <cstring>
 
 namespace civan {
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 pid_t GetThreadId() {
     return syscall(SYS_gettid);

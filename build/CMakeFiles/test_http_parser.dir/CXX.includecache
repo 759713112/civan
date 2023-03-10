@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+.././civan/bytearray.h
+memory
+-
+string
+-
+stdint.h
+-
+vector
+-
+sys/uio.h
+-
+endian.h
+.././civan/endian.h
+
+.././civan/endian.h
+byteswap.h
+-
+stdint.h
+-
+
 .././civan/fiber.h
 ucontext.h
 -
@@ -81,6 +101,8 @@ thread.h
 .././civan/thread.h
 mutex.h
 .././civan/mutex.h
+bytearray.h
+.././civan/bytearray.h
 
 .././civan/mutex.h
 noncopyable.h

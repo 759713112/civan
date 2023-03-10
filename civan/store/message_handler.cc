@@ -4,7 +4,7 @@
 namespace civan {
 namespace store{
     
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
 
 MessageHandler::MessageHandler() {
 
