@@ -277,10 +277,8 @@ bool IOManager::stopping(uint64_t& time_out) {
 }
 
 void IOManager::idle() {
-    epoll_event* events = new epoll_event[64]();
-    std::shared_ptr<epoll_event> shared_event(events, [](epoll_event* ptr){
-        delete[] ptr;
-    });
+    std::unique_ptr<epoll_event> unique_event(new epoll_event[64]());
+    epoll_event* events = unique_event.get();
     while (true) {
         int rt = 0;
         uint64_t next_timeout = 0;
@@ -288,9 +286,9 @@ void IOManager::idle() {
             CIVAN_LOG_INFO(g_logger) << "name=" << getName() << " idle stopping exit";
             break;
         }
-        
+
         do {
-            static const int MAX_TIMEOUT = 5000;
+            static const int MAX_TIMEOUT = 10000;
             if (next_timeout != ~0ull) {
                 
                 next_timeout = (int)next_timeout > MAX_TIMEOUT ? MAX_TIMEOUT : next_timeout;

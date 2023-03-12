@@ -15,7 +15,6 @@ void test_fiber() {
 int main(int argc, char const *argv[])
 {
     civan::Scheduler sc(3, true, "test");
-    
     sc.start();
     sc.schedule(test_fiber);
     CIVAN_LOG_INFO(g_logger) << "stop?";

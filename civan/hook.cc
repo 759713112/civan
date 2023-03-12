@@ -127,14 +127,14 @@ retry:
         int rt = iom->addEvent(fd, (civan::IOManager::Event)(event));
         if(rt == -1) {
             CIVAN_LOG_ERROR(g_logger) << hook_fun_name << " addEvent("
-                << fd << ", " << event << ")";
+                << fd << ", " << event << ")";    
             if(timer) {
                 timer->cancel();
             }
             return -1;
         } else {
             civan::Fiber::YieldToHold();
-            CIVAN_LOG_INFO(g_logger) << "do io2"; 
+            CIVAN_LOG_INFO(g_logger) << "do io wake"; 
             if(timer) {
                 timer->cancel();
             }
@@ -225,7 +225,6 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
         return connect_f(fd, addr, addrlen);
     }
 
-    //不应该阻塞才原函数？
     if(ctx->getUserNonblock()) {
         return connect_f(fd, addr, addrlen);
     }
@@ -294,6 +293,7 @@ int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {
 }
 
 int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
+    CIVAN_LOG_INFO(g_logger) << "accept"; 
     int fd = do_io(s, accept_f, "accept", civan::IOManager::READ, SO_RCVTIMEO, addr, addrlen);
     if(fd >= 0) {
         civan::FdMgr::GetInstance()->get(fd, true);

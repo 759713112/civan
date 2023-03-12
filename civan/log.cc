@@ -284,6 +284,8 @@ void Logger::deleteAppender(LogAppender::ptr appender) {
 void Logger::clearAppenders() {
     Mutex::Lock l(m_mutex);
     m_appenders.clear();
+    m_stdoutAppender.reset();
+
 }
 
 void Logger::log(LogLevel::Level level, LogEvent::ptr event) {
@@ -296,13 +298,7 @@ void Logger::log(LogLevel::Level level, LogEvent::ptr event) {
         }
         Mutex::Lock l(m_mutex);
         currentBuffer->writeStringWithoutLength(log_string);
-        // if (!m_appenders.empty()) {
-        //     for (auto& i: m_appenders) {
-        //         i->log(self, level, event);
-        //     }
-        // } else if (m_root) {
-        //     m_root->log(level, event);
-        // }
+
     }
     
 }
@@ -327,7 +323,7 @@ void Logger::asyncLogFunc() {
             currentBuffer.swap(bufferToWrite);
         }
         bufferToWrite->setPosition(0);
-        std::cout << m_name << " go to write " << bufferToWrite->getReadSize() << std::endl;
+        //std::cout << m_name << " go to write " << bufferToWrite->getReadSize() << std::endl;
         //CIVAN_ASSERT(bufferToWrite->getSize());
         if (bufferToWrite->getReadSize()) {
             for (auto& appender : m_appenders) {

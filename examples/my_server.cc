@@ -3,13 +3,13 @@
 #include "civan/civan.h"
 #include "civan/log.h"
 #include "civan/config.h"
-static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("system");
-int iom_num = 5;
+static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
+int iom_num = 0;
 int thread_num_per_iom = 1;
 void run() {
     //g_logger->setLevel(civan::LogLevel::Level::ERROR);
     civan::http::HttpServer::ptr my_server(new civan::http::HttpServer(true
-                , civan::IOManager::GetThis(), 0, thread_num_per_iom));
+                , civan::IOManager::GetThis(), iom_num, thread_num_per_iom));
 
     civan::Address::ptr addr = civan::IPv4Address::Create("0.0.0.0", 8120);
     if (!my_server->bind(addr)) {
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 
     YAML::Node root = YAML::LoadFile("/home/dell/jqchen/cpp_project/civan/bin/conf/log.yml");
     civan::Config::LoadFromYaml(root);
-    civan::IOManager iom(2, false, "main");
+    civan::IOManager iom(1, true, "main");
     iom.schedule(run);
     return 0;
 }

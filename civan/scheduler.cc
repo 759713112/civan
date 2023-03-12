@@ -5,7 +5,7 @@
 namespace civan{
 
 static thread_local Scheduler* t_scheduler = nullptr;
-static thread_local Fiber* t_fiber = nullptr;
+static thread_local Fiber* t_scheduler_fiber = nullptr;
 
 
 static civan::Logger::ptr g_logger = CIVAN_LOG_NAME("root");
@@ -15,16 +15,16 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
     CIVAN_ASSERT(threads > 0);
 
     if (use_caller) {
-        //创建当前线程主协程
+        //以当前主线程的主协程为Fiber主协程
         civan::Fiber::GetThis();
         --threads;
 
-        CIVAN_ASSERT(GetThis() == nullptr);
         t_scheduler = this;
 
         m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
         civan::Thread::SetName(m_name);
-        t_fiber = m_rootFiber.get();
+        t_scheduler_fiber = m_rootFiber.get();
+        
         m_rootThread = civan::GetThreadId();
         m_threadIds.push_back(m_rootThread);
     } else {
@@ -47,7 +47,7 @@ Scheduler* Scheduler::GetThis() {
 }
 
 Fiber* Scheduler::GetMainFiber() {
-    return t_fiber;
+    return t_scheduler_fiber;
 }
 
 void Scheduler::start() {
@@ -106,7 +106,7 @@ void Scheduler::stop() {
         //             || m_rootFiber->getState() == Fiber::EXCEPT) {
         //         m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
         //         CIVAN_LOG_INFO(g_logger) << "root fiber is term, reset";
-        //         t_fiber = m_rootFiber.get();
+        //         t_scheduler_fiber = m_rootFiber.get();
         //     } 
         //     m_rootFiber->call();
         // }
@@ -151,11 +151,12 @@ void Scheduler::setThis() {
 }
 
 void Scheduler::run() {
+    CIVAN_LOG_INFO(g_logger) << m_name << "run";
     //Fiber::GetThis();
     setThis();
     set_hook_enable(true);
     if (civan::GetThreadId() != m_rootThread) {
-        t_fiber = Fiber::GetThis().get();
+        t_scheduler_fiber = Fiber::GetThis().get();
     } 
 
     Fiber::ptr idle_fiber(new Fiber(std::bind(&Scheduler::idle, this)));
@@ -177,6 +178,7 @@ void Scheduler::run() {
             while (it != m_fibers.end()) {
                 if (it->thread != -1 && it->thread != civan::GetThreadId()) {
                     ++it;
+                    CIVAN_LOG_INFO(g_logger) << "idle_fiber id: " << idle_fiber->getId();
                     tickle_me = true;
                     continue;
                 }
@@ -199,14 +201,15 @@ void Scheduler::run() {
         }
 
         if (ft.fiber && (ft.fiber->getState() != Fiber::TERM
-                        || ft.fiber->getState() != Fiber::EXCEPT)) {
+                        && ft.fiber->getState() != Fiber::EXCEPT)) {
             ft.fiber->swapIn();
-            CIVAN_LOG_INFO(g_logger) << "swap out";
+            CIVAN_LOG_INFO(g_logger) << "swap out1";
             --m_activeThreadCount;
             if (ft.fiber->getState() == Fiber::READY) {
                 schedule(ft.fiber);
             } else if (ft.fiber->getState() != Fiber::TERM
                     && ft.fiber->getState() != Fiber::EXCEPT) {
+                CIVAN_LOG_INFO(g_logger) << "be hold ";
                 ft.fiber->m_state = Fiber::HOLD;
             }
 
@@ -221,12 +224,13 @@ void Scheduler::run() {
             ft.reset();
             
             cb_fiber->swapIn();
-            CIVAN_LOG_INFO(g_logger) << "swap out";
+            CIVAN_LOG_INFO(g_logger) << "swap out2";
             --m_activeThreadCount;
             if (cb_fiber->getState() == Fiber::READY) {
                 schedule(cb_fiber);
-            } else if (cb_fiber->getState() != Fiber::TERM
-                    || cb_fiber->getState() != Fiber::EXCEPT) {
+                cb_fiber.reset();
+            } else if (cb_fiber->getState() == Fiber::TERM
+                    || cb_fiber->getState() == Fiber::EXCEPT) {
                 cb_fiber.reset();
             } else {
                 cb_fiber->m_state = Fiber::HOLD;
@@ -243,11 +247,12 @@ void Scheduler::run() {
             }
             ++m_idleThreadCount;
             idle_fiber->swapIn();
+            --m_idleThreadCount;
             if (idle_fiber->getState() != Fiber::TERM 
                     && idle_fiber->getState() != Fiber::EXCEPT) {
                 idle_fiber->m_state = Fiber::HOLD;
             }
-            --m_idleThreadCount;
+            
         }
 
     }

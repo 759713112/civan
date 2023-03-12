@@ -3,7 +3,7 @@
 
 namespace civan {
 
-template <typename T, typename x = void, int N = 0>
+template <typename T>
 class Singleton {
 public:
     static T* GetInstance() {
@@ -12,7 +12,7 @@ public:
     }
 };
 
-template<class T, class X = void, int N = 0>
+template<class T>
 class SingletonPtr {
 public:
     static std::shared_ptr<T> GetInstance() {

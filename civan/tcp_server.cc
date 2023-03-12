@@ -67,7 +67,7 @@ bool TcpServer::bind(const std::vector<Address::ptr>& addrs
 void TcpServer::addWorkers(int worker_num, int thread_per_worker) {
     for (int i = 0; i < worker_num; ++i) {
         std::string woker_name = m_name + "_" + std::to_string(m_workers.size() + 1);
-        m_workers.push_back(IOManager::ptr(new IOManager(thread_per_worker, false, "woker_name")));
+        m_workers.push_back(IOManager::ptr(new IOManager(thread_per_worker, false, woker_name)));
     }
 }
 
@@ -85,11 +85,13 @@ void TcpServer::startAccept(Socket::ptr sock) {
                 m_workers[worker_id]->schedule(std::bind(&TcpServer::handleClient, 
                                 shared_from_this(), client));
             }
+            client.reset();
             
         } else {
             CIVAN_LOG_ERROR(g_logger) << "accept errno" << errno
                 << "errstr=" << strerror(errno);
         }
+        
     }
 }
 

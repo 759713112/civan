@@ -11,7 +11,7 @@ static std::atomic<uint64_t> s_fiber_id {0};
 static std::atomic<uint64_t> s_fiber_count {0};
 
 static thread_local Fiber* t_fiber = nullptr;  //当前协程
-static thread_local Fiber::ptr t_threadFiber = nullptr;  //当前线程的主协程
+static thread_local Fiber::ptr t_threadFiber = nullptr;  //主线程的主要协程（比如创建scheduler等）
  
 static ConfigVar<uint32_t>::ptr g_fiber_stack_size = 
     Config::Lookup<uint32_t>("fiber.stack_size", 1024*1024, "fiber stack size");
@@ -30,16 +30,7 @@ public:
 
 using StackAllocator = MallocStackAllocator;
 
-Fiber::Fiber() {
-    m_state = EXEC;
-    SetThis(this);
 
-    if (getcontext(&m_ctx)) {
-        CIVAN_ASSERT2(false, "getcontext");
-    }
-    ++s_fiber_count;
-    //CIVAN_LOG_DEBUG(g_logger) << "construct fiber id = " << m_id;
-}
 
 Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
     : m_id(++s_fiber_id)
@@ -134,11 +125,9 @@ void Fiber::swapIn() {
 //切换到后台
 void Fiber::swapOut() {
     SetThis(Scheduler::GetMainFiber());
-        //m_state = EXEC;
     if ( swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx) ) {
         CIVAN_ASSERT2(false, "swapcontex");
     }
-    
 }
 
 
@@ -147,7 +136,23 @@ void Fiber::SetThis(Fiber* f) {
     t_fiber = f;
 }
 
-//返回当前协程
+//以当前运行状态创建主协程
+Fiber::Fiber() {
+    m_state = EXEC;
+    SetThis(this);
+
+    if (getcontext(&m_ctx)) {
+        CIVAN_ASSERT2(false, "getcontext");
+    }
+    ++s_fiber_count;
+    //CIVAN_LOG_DEBUG(g_logger) << "construct fiber id = " << m_id;
+}
+
+/*
+    返回当前正在运行的协程t_fiber
+    如果当前正在运行的协程为空, 说明还未初始化，则当前为主协程，用getcontext创建主协程main_fiber
+    当前线程主协程t_threadFiber = main_fiber
+*/
 Fiber::ptr Fiber::GetThis() {
     if (t_fiber) {
         return t_fiber->shared_from_this();
